@@ -1,0 +1,14 @@
+{
+    "parameter":{
+        "User": "Arpit Dadhich",
+        "local_uri": "mysql://root:@localhost/portfolio",
+        "product_uri": "mysql://root:@localhost/portfolio",
+        "linkedin_uri": "https://www.linkedin.com/in/arpit-dadhich-25300618a",
+        "git_uri": "https://github.com/TechArpit20",
+        "twi_uri":"https://www.codechef.com/users/techarpit20",
+        "no_of_posts":  "3",
+        "blog_name": "TECH ARPIT- THE CODER",
+        "mail_username": "your mail id",
+        "mail_pass": "password"
+        }
+}

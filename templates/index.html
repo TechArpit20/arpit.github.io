@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block body %}
+
+ <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{url_for('static',filename='img/home-bg.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>{{parameters['blog_name']}}</h1>
+            <span class="subheading">WELCOME TO THE CODING HUNT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+      	
+     	{% for row in projects %}
+      <!-- {{row.slug}} -->
+        <div class="post-preview">
+          <a href="post/{{row.slug}}">
+            <h2 class="post-title">
+              {{row.project_name}}
+            </h2>
+            <h3 class="post-subtitle">
+              {{row.tagline}}
+            </h3>
+          </a>
+          <p class="post-meta">Link
+            <a href="#">{{row.link}}</a>
+            <br>Date:  {{row.date}}</p>
+        </div>
+        <hr>
+        {% endfor %}
+
+
+        <!-- Pager -->
+        <div class="clearfix">
+          {% if page==1 %}
+          <a class="btn btn-primary float-right" href="{{next}}">Next &rarr;</a>
+          {% elif page==last %}
+          <a class="btn btn-primary float-left" href="{{prev}}">&larr; Previous </a>
+          {% else %}
+          <a class="btn btn-primary float-left" href="{{prev}}">&larr; Previous </a>
+          <a class="btn btn-primary float-right" href="{{next}}">Next &rarr;</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+ {% endblock %}
